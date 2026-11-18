@@ -49,6 +49,9 @@ export function makeControls(canvas, onLockChange) {
     lock() {
       canvas.requestPointerLock();
     },
+    release() {
+      if (document.pointerLockElement) document.exitPointerLock();
+    },
     drainLook() {
       const x = state.lookX;
       const y = state.lookY;
